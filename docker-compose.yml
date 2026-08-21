@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: marmitex-db
+    restart: always
+    environment:
+      POSTGRES_USER: "marmitex"
+      POSTGRES_PASSWORD: "marmitex123"
+      POSTGRES_DB: "marmitex_db"
+    ports:
+      - "5433:5432"
+    volumes:
+      - marmitex_data:/var/lib/postgresql/data
+
+volumes:
+  marmitex_data:
